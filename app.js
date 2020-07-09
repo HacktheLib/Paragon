@@ -9,9 +9,10 @@ var op = document.getElementById("op");
 var response = document.getElementById("response"); // used for Try Again text
 var results = document.getElementById("results");
 var category = document.getElementById("category");
-
+var time = document.getElementById("time");
+const totscore = document.getElementById("totscore");
 /***** STATE VARIABLES *****/
-var max = 20;
+const max = 3;
 var num1;
 var num2;
 var answer;
@@ -19,8 +20,17 @@ var answer;
 var startTime;
 var endTime;
 
-var count; // number of correct answers
 var times = [];
+var score = 0;
+
+
+
+
+
+
+
+
+
 
 /***** INITIALIZING *****/
 inputField.className = "hide";
@@ -29,39 +39,41 @@ stopButton.className = "hide";
 /***** EVENTS *****/
 startButton.onclick = function() {
 	// initializing the count
-	count = 0;
+	var count = 15; // number of correct answers
+
 	times = [];
 	results.innerHTML = ""; // clear results
 	category.innerHTML = ""; // clear category
 	refreshNums();
 	inputField.className = ""; // show the input field
-	stopButton.className = ""; // show the stop button
 	startButton.className = "hide"; // hide the start button
 	inputField.focus();
+	
+	var interval = window.setInterval(
+		function () {
+			count--;
+			time.innerHTML = "You have " + count + " more seconds";
+			if (count == 0) {
+				afterStopButton()
+				clearInterval(interval);
+			}
+		}, 1000);		
+		interval
+	count = 16;
+
 };
 
 form.onsubmit = function(e) {
 	// need to prevent the default form submission wich reloads the page
 	e.preventDefault();
 	getAnswer();
+	totscore.innerHTML = "Your Score is: " + score;
 };
 
-stopButton.onclick = function() {
-	var resultString;
-	var categoryString;
-	if (times.length > 0) {
-		// getting mean time
-		var total = 0;
-		for (var i = 0; i < times.length; i++) {
-			total += times[i];
-		}
-		var mean = (total / times.length) / 1000;
-		resultString = "Average time: " + mean.toPrecision(4) + " sec";
-		categoryString = getCategory(mean);
-	} else {
-		resultString = "No results recorded. Hit the Enter key to submit your answers.";
-		categoryString = "";
-	}
+stopButton.onclick = afterStopButton();
+
+function afterStopButton() {
+
 
 	inputField.className = "hide"; // hide the input field
 	stopButton.className = "hide"; // hide the stop button
@@ -72,8 +84,21 @@ stopButton.onclick = function() {
 	q.innerHTML = "";
 	op.innerHTML = "";
 	response.innerHTML = ""; // clear response in case it was set
-	results.innerHTML = resultString;
-	category.innerHTML = categoryString;
+
+	if (score  == 0) {
+		results.innerHTML = "Press Start!";
+	} else if (score <=  3) {
+		results.innerHTML = "It would help if you opened your eyes";
+	} 
+		else if (score <=  10) {
+		results.innerHTML = "B Student";
+	} else if (score <= 30) {
+		results.innerHTML =  "Honors Roll";
+	} else {
+		results.innerHTML =  "You know what, take my crown";
+	} 
+
+
 };
 
 /***** FUNCTIONS ******/
@@ -98,10 +123,7 @@ var getAnswer = function() {
 	answer = parseInt(inputField.value);
 
 	if (answer === correct) {
-		// Stopping the timer and adding the time to the times array
-		endTime = new Date();
-		times[count++] = endTime.getTime() - startTime.getTime();
-		// the answer was correct, so no need for "Try Again"
+		score+=5;
 		response.innerHTML = "";
 		refreshNums();
 	} else {
@@ -111,18 +133,3 @@ var getAnswer = function() {
 	inputField.value = "";
 };
 
-var getCategory = function(mean) {
-	var c;
-	if (mean < 2) {
-		c = "Human Computer";
-	} else if (mean < 4) {
-		c = "Math Wiz";
-	} else if (mean < 7) {
-		c = "B Student";
-	} else if (mean < 10) {
-		c = "Probably Drunk";
-	} else {
-		c = "High School Drop Out";
-	}
-	return c;
-};
