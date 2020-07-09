@@ -39,7 +39,7 @@ stopButton.className = "hide";
 /***** EVENTS *****/
 startButton.onclick = function() {
 	// initializing the count
-	var count = 15; // number of correct answers
+	var count = 59; // number of correct answers
 
 	times = [];
 	results.innerHTML = ""; // clear results
@@ -59,7 +59,7 @@ startButton.onclick = function() {
 			}
 		}, 1000);		
 		interval
-	count = 16;
+	count = 61;
 
 };
 
@@ -123,7 +123,7 @@ var getAnswer = function() {
 	answer = parseInt(inputField.value);
 
 	if (answer === correct) {
-		score+=5;
+		score++;
 		response.innerHTML = "";
 		refreshNums();
 	} else {
