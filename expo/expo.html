@@ -1,0 +1,50 @@
+<!doctype HTML>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Mental Math</title>
+		<link rel="stylesheet" type="text/css" href="../main.css">
+	</head>
+
+	<body>
+		<div class="topnav" id="myTopnav">
+			<a href="../index.html" class="active">Add</a>
+			<a href="../sub/sub.html">Minus</a>
+			<a href="../mult/mult.html">Times</a>
+			<a href="../expo/expo.html">Exponent</a>
+
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+			  <i class="fa fa-bars"></i>
+			</a>
+		  </div>
+		
+		<div class="container">
+			<h2>How fast are you?</h2>
+				<h2 id="time">You have 60 more seconds</h2>
+				<h2 id="totscore">Your Score Will Be Here </h2>
+
+				<p>
+				<span id="p"></span> <span id="op"></span> <span id="q"></span>
+			</p>
+			<p id="response"></p>
+			<p id="results">Press the button to start!</p>
+			<p id="category"></p>
+			<div class="controls">
+				<form>
+					<input type="text" name="answer" id="in" autocomplete="off">
+				</form>
+				<button id="start">START</button>
+				<button id="stop">STOP</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="expo.js"></script>
+	
+	
+		
+	
+	
+	
+	</body>
+</html>
