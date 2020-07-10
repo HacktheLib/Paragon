@@ -5,7 +5,7 @@
 }
 
 body {
-	background-image: url("/resources/paragonback.png"); 
+	background-image: url("resources/paragonback.png"); 
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: Exo;
