@@ -1,2 +1,2 @@
 # Paragon
-Create a game-based platform for students in grades 1-8 to be able to expand their mathematical knowledge and abilities. In this game, they can increase their in-game level by achieving at least 90% accuracy within each level. Before moving on to the next level, students have the option to explore resources we provide to aid them in the learning process for subjects they are not yet familiar with (i.e. A short guide on the basics of multiplication, YouTube links covering the fundamentals of algebra 1, etc.)
+Create a game-based website for students in grades 1-8 to be able to expand their mathematical knowledge and abilities through a high-paced set of math questions that will challenge them to process information at a faster pace.
