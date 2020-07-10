@@ -12,7 +12,7 @@ var category = document.getElementById("category");
 var time = document.getElementById("time");
 const totscore = document.getElementById("totscore");
 /***** STATE VARIABLES *****/
-const max = 3;
+const max = 15;
 var num1;
 var num2;
 var answer;
