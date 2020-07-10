@@ -12,7 +12,7 @@ var category = document.getElementById("category");
 var time = document.getElementById("time");
 const totscore = document.getElementById("totscore");
 /***** STATE VARIABLES *****/
-const max = 3;
+const max = 15;
 var num1;
 var num2;
 var answer;
@@ -104,11 +104,11 @@ function afterStopButton() {
 /***** FUNCTIONS ******/
 var refreshNums = function() {
 	// Getting some random numbers
-	num1 = Math.floor((Math.random() * max) + 1);
-	num2 = Math.floor((Math.random() * max) + 1);
+	num1 = Math.floor((Math.random() * 20) + 10);
+	num2 = Math.floor((Math.random() * 9) );
 	// Printing numbers to user
 	p.innerHTML = num1;
-	op.innerHTML = "+";
+	op.innerHTML = "-";
 	q.innerHTML = num2;
 	// Starting timer
 	startTime = new Date();
@@ -118,7 +118,7 @@ var refreshNums = function() {
 * This is called in the onsubmit event
 */
 var getAnswer = function() {
-	var correct = num1 + num2;
+	var correct = num1 - num2;
 	// Getting the users attempt
 	answer = parseInt(inputField.value);
 
