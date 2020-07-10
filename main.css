@@ -1,7 +1,19 @@
+@font-face{
+	font-family: Exo;
+	src: url(Exo-ExtraBold.ttf);
+	font-weight: 800;
+}
+
 body {
-	font-family: sans-serif;
+	background-image: url(../img/paragonback.png); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: Exo;
+	src: url(Exo-ExtraBold.ttf);
+	font-weight: 800;
 	text-align: center;
 	color: #333;
+
 }
 
 h1 {
