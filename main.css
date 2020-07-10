@@ -1,5 +1,16 @@
+@font-face{
+	font-family: Exo;
+	src: url(Exo-ExtraBold.ttf);
+	font-weight: 800;
+}
+
 body {
-	font-family: sans-serif;
+	background-image: url("/resources/paragonback.png"); 
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: Exo;
+	src: url("Exo-ExtraBold.ttf");
+	font-weight: 800;
 	text-align: center;
 	color: #333;
 margin:0;
@@ -14,14 +25,14 @@ margin:0;
 .topnav {
 	overflow: hidden;
 	background-color: #333;
-  }
+}
   
   .topnav a {
 	float: left;
 	display: block;
 	color: #f2f2f2;
 	text-align: center;
-	padding: 14px 16px;
+	padding: 18px 20px;
 	text-decoration: none;
 	font-size: 20px;
   }
@@ -32,7 +43,7 @@ margin:0;
   }
   
   .topnav a.active {
-	background-color: #4CAF50;
+	background-color: #4cacaf;
 	color: white;
   }
   
@@ -132,7 +143,7 @@ p span {
 }
 
 #start {
-	background-color: #00F8A0;
+	background-color: #00ffa6;
 	border-color: #00F8A0;
 }
 
