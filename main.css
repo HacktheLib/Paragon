@@ -101,18 +101,7 @@ input:focus {
 	outline: none;
 }
 
-button {
-	display: block;
-	cursor: pointer;
-	width: 200px;
-	height: 120px;
-	color: white;
-	font-size: 22px;
-	border: 6px solid #000000;
-	border-radius: 10px;
-	margin: 0 auto;
-	margin-top: 20px;
-}
+
 
 p {
 	text-align: center;
@@ -143,8 +132,21 @@ p span {
 }
 
 #start {
-	background-color: #00ffa6;
-	border-color: #00F8A0;
+    background-color: #00F8A0;
+    border-color: #00F8A0;
+}
+button {
+    display: block;
+    cursor: pointer;
+    width: 200px;
+    height: 120px;
+    color: #4D6F64;
+    font-size: 30px;
+    font-weight: bold;
+    border: 6px solid #000000;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 #stop {
