@@ -1,63 +1,112 @@
-<!doctype HTML>
-<html lang="en">
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<title>Mental Math</title>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-		<link rel="stylesheet" type="text/css" href="main.css">
-	</head>
-
-	<body>
-		<div class="topnav" id="myTopnav">
-			<a href="index.html" class="active">Add</a>
-			<a href="sub/sub.html">Minus</a>
-			<a href="mult/mult.html">Times</a>
-			<a href="expo/expo.html">Exponent</a>
-
-			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
-			  <i class="fa fa-bars"></i>
-			</a>
-		  </div>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Speed and Dexterity | Speed Test</title>
+<meta http-equiv="Cache-Control" content="no-store" />
+<link rel="stylesheet" href="speedmain.css" />
+<link rel="stylesheet" href="speedtest.css" />
+</head>
+<body>
+<div id="pageContent">
+	<h1 class="page-title">Speedtest</h1>
+	<p class="body-text" id="instructionText">This is a <span id="minuteprint"></span> minute (<span id="secondprint"></span> second) typing test. The timer will begin when you start to type. To the best of your ability, attempt to type as you would normally. This test is designed to correct your typing, and thus is most effective when able to correct the way you actually type.</p>
+	<div id="textInstruction">
+		<p id="textInstructionContents">Beyond the green swelling hills ofs.</p>
+	</div>
+	<div id="textDisplay">
+		<textarea id="textInput" placeholder="Start typing here!" onpaste="return false" autofocus></textarea>
+	</div>
+	<div id="keyboardLayout">
+		<div class="key first word" id="graveAccent">`</div>
+		<div class="key first" id="1">1</div>
+		<div class="key first" id="2">2</div>
+		<div class="key first" id="3">3</div>
+		<div class="key first" id="4">4</div>
+		<div class="key first" id="5">5</div>
+		<div class="key first" id="6">6</div>
+		<div class="key first" id="7">7</div>
+		<div class="key first" id="8">8</div>
+		<div class="key first" id="9">9</div>
+		<div class="key first" id="0">0</div>
+		<div class="key first" id="hyphen">-</div>
+		<div class="key first" id="equalsSign">=</div>
+		<div class="key first word" id="backspace">&#8592;</div>
 		
-		<div style="background-color: #4D6F64; padding: 10px; margin-top: 30px; color: #f0f0f0; box-shadow: 15px 15px #07ffde;" class="container">
-			<h1><b>Paragon</b></h1>
-			<h2>How fast are you?</h2>
-				<h2 id="time">You have 60 more seconds</h2>
-				<h2 id="totscore">Your Score Will Be Here </h2>
-				<p>Press Enter after you think you have the addition right!</p>
+		<div class="break"></div>
+		
+		<div class="key second word" id="tab">Tab</div>
+		<div class="key second" id="q">Q</div>
+		<div class="key second" id="w">W</div>
+		<div class="key second" id="e">E</div>
+		<div class="key second" id="r">R</div>
+		<div class="key second" id="t">T</div>
+		<div class="key second" id="y">Y</div>
+		<div class="key second" id="u">U</div>
+		<div class="key second" id="i">I</div>
+		<div class="key second" id="o">O</div>
+		<div class="key second" id="p">P</div>
+		<div class="key second" id="openBracket">[</div>
+		<div class="key second" id="closeBracket">]</div>
+		<div class="key second" id="backslash">\</div>
 
-				<p>
-				<span id="p"></span> <span id="op"></span> <span id="q"></span>
-			</p>
-			<p id="response"></p>
-			<p style="color: #07ffde;" id="results">Press the button to start!</p>
-			<p id="category"></p>
-			<div class="controls">
-				<form>
-					<input type="text" name="answer" id="in" autocomplete="off">
-				</form>
-				<button id="start">START</button>
-				<button id="stop">STOP</button>
-			</div>
-		</div>
+		<div class="break"></div>
 		
-		<div style="width: 100%; height: 90px; background-color: #0cb8a1; margin-top: 60px;   padding: 40px 0;">
-			<h3 style="text-align: center; ">@Paragon</h3>
-			<h3 style="text-align: center; ">Github: https://github.com/HacktheLib/Paragon</h3>
+		<div class="key third word" id="capslock">Caps</div>
+		<div class="key third" id="a">A</div>
+		<div class="key third" id="s">S</div>
+		<div class="key third" id="d">D</div>
+		<div class="key third" id="f">F</div>
+		<div class="key third" id="g">G</div>
+		<div class="key third" id="h">H</div>
+		<div class="key third" id="j">J</div>
+		<div class="key third" id="k">K</div>
+		<div class="key third" id="l">L</div>
+		<div class="key third" id=";">;</div>
+		<div class="key third" id="'">'</div>
+		<div class="key third word" id="enter">Enter</div>
+
+		<div class="break"></div>
+
+		<div class="key fourth word" id="leftShift">Shift</div>
+		<div class="key fourth" id="z">Z</div>
+		<div class="key fourth" id="x">X</div>
+		<div class="key fourth" id="c">C</div>
+		<div class="key fourth" id="v">V</div>
+		<div class="key fourth" id="b">B</div>
+		<div class="key fourth" id="n">N</div>
+		<div class="key fourth" id="m">M</div>
+		<div class="key fourth" id="comma">,</div>
+		<div class="key fourth" id="period">.</div>
+		<div class="key fourth" id="forwardSlash">/</div>
+		<div class="key fourth word" id="rightShift">Shift</div>
+
+		<div class="break"></div>
+
+
+
+
+
+
+
+
+
 
 		
-		</div>
-		
+		<div class="key fifth word" id="leftControl">Ctrl</div>
+		<div class="key fifth word" id="leftWindowsKey">Win</div>
+		<div class="key fifth word" id="leftAlt">Alt</div>
+		<div class="key fifth word" id="space">Space</div>
+		<div class="key fifth word" id="rightAlt">Alt</div>
+		<div class="key fifth word" id="rightWindowsKey">Win</div>
+		<div class="key fifth word" id="menu">Menu</div>
+		<div class="key fifth word" id="rightControl">Ctrl</div>
+	</div>
+	<div id="timer">
+		<h2 id="timerText">Time: <span id="timerReadout">30.0</span> seconds</h2>
+	</div>
+</div> 
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-		<script type="text/javascript" src="app.js"></script>
-	
-	
-		
-	
-	
-	
-	</body>
+<script src="speedtest.js"></script>
 </html>
